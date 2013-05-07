@@ -1,0 +1,8 @@
+E:\Documents\GitHub\TPs\dotNET\BugTrack\collin_t\collin_tBugTrack\WebApplicationBackEnd\bin\WebApplicationBackEnd.dll
+E:\Documents\GitHub\TPs\dotNET\BugTrack\collin_t\collin_tBugTrack\WebApplicationBackEnd\bin\WebApplicationBackEnd.pdb
+E:\Documents\GitHub\TPs\dotNET\BugTrack\collin_t\collin_tBugTrack\WebApplicationBackEnd\bin\DynamicData.EFCodeFirstProvider.dll
+E:\Documents\GitHub\TPs\dotNET\BugTrack\collin_t\collin_tBugTrack\WebApplicationBackEnd\bin\EntityFramework.dll
+E:\Documents\GitHub\TPs\dotNET\BugTrack\collin_t\collin_tBugTrack\WebApplicationBackEnd\bin\EntityFramework.xml
+E:\Documents\GitHub\TPs\dotNET\BugTrack\collin_t\collin_tBugTrack\WebApplicationBackEnd\obj\Debug\WebApplicationBackEnd.csprojResolveAssemblyReference.cache
+E:\Documents\GitHub\TPs\dotNET\BugTrack\collin_t\collin_tBugTrack\WebApplicationBackEnd\obj\Debug\WebApplicationBackEnd.dll
+E:\Documents\GitHub\TPs\dotNET\BugTrack\collin_t\collin_tBugTrack\WebApplicationBackEnd\obj\Debug\WebApplicationBackEnd.pdb

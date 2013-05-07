@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="97902ccc4dcc4b68b1ff0b1afea984ba" Name="Diagramme1">
+        <EntityTypeShape EntityType="BugTrackModel.T_Bug" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugTrackModel.T_Comment" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugTrackModel.T_Project" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugTrackModel.T_Transaction" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BugTrackModel.T_User" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="BugTrackModel.FK_T_Bug_T_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="BugTrackModel.FK_T_Comment_T_Bug" ManuallyRouted="false" />
+        <AssociationConnector Association="BugTrackModel.FK_T_Transaction_T_Bug" ManuallyRouted="false" />
+        <AssociationConnector Association="BugTrackModel.FK_T_Comment_T_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BugTrackModel.FK_T_Transaction_T_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
