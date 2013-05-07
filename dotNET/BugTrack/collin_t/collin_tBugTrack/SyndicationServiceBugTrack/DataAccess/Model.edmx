@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BugTrackModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BugTrackModelStoreContainer">
+          <EntitySet Name="T_Bug" EntityType="BugTrackModel.Store.T_Bug" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Project" EntityType="BugTrackModel.Store.T_Project" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_T_Bug_T_Project" Association="BugTrackModel.Store.FK_T_Bug_T_Project">
+            <End Role="T_Project" EntitySet="T_Project" />
+            <End Role="T_Bug" EntitySet="T_Bug" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="T_Bug">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="idProject" Type="bigint" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Description" Type="text" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Project">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="version" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="startDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_T_Bug_T_Project">
+          <End Role="T_Project" Type="BugTrackModel.Store.T_Project" Multiplicity="1" />
+          <End Role="T_Bug" Type="BugTrackModel.Store.T_Bug" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Project">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_Bug">
+              <PropertyRef Name="idProject" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BugTrackModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BugTrackEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="T_Bug" EntityType="BugTrackModel.T_Bug" />
+          <EntitySet Name="T_Project" EntityType="BugTrackModel.T_Project" />
+          <AssociationSet Name="FK_T_Bug_T_Project" Association="BugTrackModel.FK_T_Bug_T_Project">
+            <End Role="T_Project" EntitySet="T_Project" />
+            <End Role="T_Bug" EntitySet="T_Bug" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="T_Bug">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="T_Project" Relationship="BugTrackModel.FK_T_Bug_T_Project" FromRole="T_Bug" ToRole="T_Project" />
+        </EntityType>
+        <EntityType Name="T_Project">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="version" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="startDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="T_Bug" Relationship="BugTrackModel.FK_T_Bug_T_Project" FromRole="T_Project" ToRole="T_Bug" />
+        </EntityType>
+        <Association Name="FK_T_Bug_T_Project">
+          <End Role="T_Project" Type="BugTrackModel.T_Project" Multiplicity="1" />
+          <End Role="T_Bug" Type="BugTrackModel.T_Bug" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BugTrackModelStoreContainer" CdmEntityContainer="BugTrackEntities">
+          <EntitySetMapping Name="T_Bug">
+            <EntityTypeMapping TypeName="BugTrackModel.T_Bug">
+              <MappingFragment StoreEntitySet="T_Bug">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Project">
+            <EntityTypeMapping TypeName="BugTrackModel.T_Project">
+              <MappingFragment StoreEntitySet="T_Project">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_T_Bug_T_Project" TypeName="BugTrackModel.FK_T_Bug_T_Project" StoreEntitySet="T_Bug">
+            <EndProperty Name="T_Project">
+              <ScalarProperty Name="id" ColumnName="idProject" />
+            </EndProperty>
+            <EndProperty Name="T_Bug">
+              <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
