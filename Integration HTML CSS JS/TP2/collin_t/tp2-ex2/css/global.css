@@ -1,0 +1,83 @@
+/* reset */
+html, body, h1, ul, li { margin:0 0 0 0; padding:0 0 0 0; list-style:none;}
+
+/* Fond de la page */
+body {
+	font:11px "Verdana", sans-serif;
+	line-height:18px;
+	background:#5aadcc url(i/body.gif) repeat-x 0 0; 
+}
+
+/* Bloc de contenu */
+#content {
+	margin:50px;
+	background:#bcdde9;
+	border:1px solid #a1a1a1;
+	padding:30px;
+}
+
+/* Titre de la page */
+h1 {
+	background:transparent url(i/h1.png) no-repeat 0 0;
+	height:112px;
+	width:430px;
+}
+h1 span {
+	display:none;
+}
+
+/* Séparateur */
+.hr1 {
+	clear:both;
+	margin-top:10px;
+	background:transparent url(i/hr.png) repeat-x 0 0;
+	height:20px;
+}
+.hr2 {
+	clear:both;
+	margin-top:10px;
+	background:transparent url(i/hr.png) repeat-x 0 -20px;
+	height:20px;
+}
+
+/* Lien de téléchargement */
+.downloadlink,
+.downloadlink:link,
+.downloadlink:visited {
+	display:block;
+	float:right;
+	background:#fff url(i/downloadlink.png) no-repeat 10px 12px;
+	border:1px solid #a9c6d1;
+	width:180px;
+	height:85px;
+	color:#333;
+	text-decoration:none;
+	line-height:15px;
+	margin-left:20px;
+}
+.downloadlink:hover {
+	background:#fff url(i/downloadlink.png) no-repeat 10px -62px;
+	color:#000;
+}
+.downloadlink_label {
+	font-weight:bold;
+	display:block;
+	padding:10px 5px 5px 70px;
+}
+.downloadlink_size {
+	display:block;
+	font-weight:normal;
+	padding:5px 5px 5px 70px;
+}
+
+
+/* Liste de fonctionalités */
+ul.features li {
+	list-style:disc inside;
+}
+
+/* Liste de commenataires */
+ul.press li em {
+	font-style:normal;
+	font-weight:bold;
+}

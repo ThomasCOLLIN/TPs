@@ -1,0 +1,5 @@
+<tracks>
+	<track cover="http://fakeimg.pl/100x100/?text=Cover1">./track1.mp3</track>
+	<track cover="http://fakeimg.pl/100x100/?text=Cover2">./track2.mp3</track>
+	<track cover="http://fakeimg.pl/100x100/?text=Cover2">./track3.mp3</track>
+</tracks>

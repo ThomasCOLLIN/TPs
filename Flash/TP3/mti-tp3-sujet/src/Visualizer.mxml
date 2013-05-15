@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+         xmlns:s="library://ns.adobe.com/flex/spark" 
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         enterFrame="enterFrameHandler(event)">
+    
+    <fx:Declarations>
+        <fx:uint id="lineColor"/>
+    </fx:Declarations>
+    
+    <fx:Script>
+        <![CDATA[
+            import mx.events.FlexEvent;
+            
+            private var _data : Vector.<Number>;
+            
+            protected function enterFrameHandler(event : Event) : void
+            {
+                var spectrum    : ByteArray         = new ByteArray();
+                var data        : Vector.<Number>   = new Vector.<Number>(256, true);
+                
+                _data ||= new Vector.<Number>(256, true);
+                
+                SoundMixer.computeSpectrum(spectrum);
+                
+                // FIXME: sum and average left + right spectrum data
+                
+                // FIXME: draw a line corresponding to the sound spectrum using the vector drawing API
+            }
+            
+        ]]>
+    </fx:Script>
+    
+</s:Group>
