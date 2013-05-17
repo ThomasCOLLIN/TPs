@@ -1,0 +1,8 @@
+<?xmlversion="1.0" encoding="UTF-8"?>
+
+<persistenceversion="1.0" xmlns="http://java.sun.com/xml/ns/persistence">
+    <persistence-unit name="mti.sample" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>you.class.complete.Path</class>
+    </persistence-unit>
+</persistence>

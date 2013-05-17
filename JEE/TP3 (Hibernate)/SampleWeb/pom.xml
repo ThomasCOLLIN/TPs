@@ -13,6 +13,10 @@
     <properties>
         <cxf.version>2.2.9</cxf.version>
         <spring.version>2.5.6</spring.version>
+        <mysql-version>5.1.6</mysql-version>
+        <hibernate-version>3.2.6.ga</hibernate-version>
+        <hibernate-annotations-version>3.3.1.GA</hibernate-annotations-version>
+        <hibernate-entitymanager-version>3.3.2.GA</hibernate-entitymanager-version>
         <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
     </properties>
 
@@ -88,6 +92,26 @@
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-common-utilities</artifactId>
             <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate</artifactId>
+            <version>${hibernate-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-annotations</artifactId>
+            <version>${hibernate-annotations-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate-entitymanager-version}</version>
         </dependency>
     </dependencies>
 
