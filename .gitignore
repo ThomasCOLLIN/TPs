@@ -1,0 +1,7 @@
+bin/
+obj/
+bin-debug/
+target/
+
+*.suo
+*.exe
